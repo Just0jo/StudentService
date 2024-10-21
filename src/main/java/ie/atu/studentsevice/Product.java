@@ -16,7 +16,6 @@ public class Product {
     private String lastName;
 
     private String email;
-
     private long dateOfBirth;
 
 }
