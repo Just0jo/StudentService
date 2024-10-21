@@ -1,5 +1,6 @@
 package ie.atu.studentsevice;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,17 +21,8 @@ public class Controller {
         this.productClient = productClient;
     }
     @PostMapping("/ProductPost")
-    public String addProduct(@RequestBody Product product){
-        String ProductGet = ProductClient.StudentDetails(product);
-        return ProductGet;
+    public String addProduct(@RequestBody @Valid Product product){
+        String productGet = ProductClient.studentDetails(product);
+        return productGet;
     }
-
-
-
-
-
-
-
-
-
 }
